@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		1596CC042F48BCF0489B05E6 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1455050207AA7A459AB74B /* SummaryViewModel.swift */; };
 		1F4A9843FD404259F9C54C74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82AC19ADE46AA6BB123A557 /* ContentView.swift */; };
+		201C12423958C888383944C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AE815F78E36D75C40387964 /* Assets.xcassets */; };
 		B959A597328C8401EE183DCB /* AppleIntelligenceSummarizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CD7091A20D0F5625A553AF /* AppleIntelligenceSummarizerApp.swift */; };
 		CC4165375E7F8866979076A9 /* YouTubeTranscriptService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD760C9D54CC79111783B7A /* YouTubeTranscriptService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AE815F78E36D75C40387964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278AC19FB7CFCB46B8EA5C99 /* AppleIntelligenceSummarizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleIntelligenceSummarizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33CD7091A20D0F5625A553AF /* AppleIntelligenceSummarizerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIntelligenceSummarizerApp.swift; sourceTree = "<group>"; };
 		9A1455050207AA7A459AB74B /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
@@ -34,6 +36,7 @@
 			isa = PBXGroup;
 			children = (
 				33CD7091A20D0F5625A553AF /* AppleIntelligenceSummarizerApp.swift */,
+				1AE815F78E36D75C40387964 /* Assets.xcassets */,
 				F82AC19ADE46AA6BB123A557 /* ContentView.swift */,
 				9A1455050207AA7A459AB74B /* SummaryViewModel.swift */,
 				ADD760C9D54CC79111783B7A /* YouTubeTranscriptService.swift */,
@@ -57,6 +60,7 @@
 			buildConfigurationList = DBBAA5CF02950AE28579007D /* Build configuration list for PBXNativeTarget "AppleIntelligenceSummarizer" */;
 			buildPhases = (
 				06FB473529352A2743DC91DF /* Sources */,
+				12A4CAF9561846C7C39147CF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -101,6 +105,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12A4CAF9561846C7C39147CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				201C12423958C888383944C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06FB473529352A2743DC91DF /* Sources */ = {
