@@ -11,9 +11,11 @@ with Apple's on-device Foundation Models framework.
 - Loads the default-language caption track from a pasted YouTube video URL.
 - Automatically starts summarizing after a YouTube transcript is loaded.
 - Supports ordinary YouTube watch links, short links, Shorts, embeds, and live URLs.
-- Offers two processing modes:
-  - **Fast mode** (default) samples representative sentences throughout a long
+- Offers three processing modes:
+  - **Fast mode** samples representative sentences throughout a long
     document and uses one model request.
+  - **Smart mode** (default) uses native sentence embeddings to select a
+    semantically diverse set of passages in one model request.
   - **Thorough mode** summarizes every chunk separately, then combines the
     partial summaries for better coverage.
 - Limits the final result to one paragraph of at most 100 words.
@@ -47,8 +49,8 @@ No package installation or API key is required.
 ### Summarize pasted text
 
 1. Paste text into the left editor.
-2. Leave **Fast mode** enabled for the quickest result, or disable it for more
-   complete processing of a long document.
+2. Choose **Fast** for the quickest result, **Smart** for efficient semantic
+   coverage, or **Thorough** for complete processing of a long document.
 3. Click **Summarize** or press Command-Return.
 
 ### Summarize a YouTube video
@@ -74,6 +76,8 @@ cannot be submitted in one request:
 
 - Fast mode uses `NLTokenizer` to select sentences at regular intervals across
   the entire document, fitting representative content into one request.
+- Smart mode uses the native `NLEmbedding` sentence model and a budgeted
+  facility-location algorithm to maximize semantic coverage in one request.
 - Thorough mode divides the document at natural boundaries, summarizes each
   section in a separate fresh session, and recursively combines the results.
 

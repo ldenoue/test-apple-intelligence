@@ -133,7 +133,12 @@ struct ContentView: View {
 
                 if viewModel.isSummarizing {
                     VStack(spacing: 10) {
-                        ProgressView()
+                        if let progressFraction = viewModel.progressFraction {
+                            ProgressView(value: progressFraction)
+                                .frame(width: 220)
+                        } else {
+                            ProgressView()
+                        }
                         Text(viewModel.progressMessage)
                             .foregroundStyle(.secondary)
                     }
@@ -178,9 +183,15 @@ struct ContentView: View {
             }
             .disabled(viewModel.sourceText.isEmpty && viewModel.summary.isEmpty)
 
-            Toggle("Fast mode", isOn: $viewModel.useFastMode)
-                .toggleStyle(.switch)
-                .help("Sample representative passages and summarize with one model request")
+            Picker("Summary mode", selection: $viewModel.summaryMode) {
+                ForEach(SummaryMode.allCases) { mode in
+                    Text(mode.rawValue).tag(mode)
+                }
+            }
+            .labelsHidden()
+            .pickerStyle(.segmented)
+            .frame(width: 280)
+            .help("Fast samples by position, Smart selects semantic coverage, and Thorough processes every section")
 
             Spacer()
 
